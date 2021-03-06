@@ -1,0 +1,224 @@
+# Run Mode(debug, test, release)
+RunMode = "test"
+
+# Use swagger
+Swagger = true
+
+# Print config on start
+PrintConfig = true
+
+[Casbin]
+# Enable casbin?
+Enable = true
+# Debug mode
+Debug = false
+# Model file
+Model = ""
+# Auto load
+AutoLoad = false
+# Auto load interval
+AutoLoadInternal = 60
+
+[Root]
+# Admin user
+UserName = "admin"
+# Admin password
+Password = "password"
+# Name
+RealName = "Administrator"
+
+[Tenant]
+# In this sample, using admin role permission for multiple tenants
+# It needs to be saved into database if roles is tenant based 
+# (Attention: it will slow down the whole system)
+# Administrator role name
+TenantAdministrotorRoleName = "tenant_administrator"
+
+[Gateway]
+# http host
+Host = "0.0.0.0"
+# http port
+Port = 8888
+# cert file
+CertFile = ""
+# key file
+KeyFile = ""
+# graceful shutdown timeout(s)
+ShutdownTimeout = 30
+# API URL, Prefix
+PathPrefix="/"
+# enable
+Enable=true
+
+[GRPC]
+# http host
+Host = "0.0.0.0"
+# tcp port for grpc server
+Port = 8889
+# cert file
+CertFile = ""
+# key file
+KeyFile = ""
+# graceful shutdown timeout(s)
+ShutdownTimeout = 30
+# Rate Limit ?/s
+RateLimitCount = 100
+
+[BasicAuth]
+# basic auth usre
+User = "user"
+# basic auth password
+Password = "pass"
+
+[Log]
+# Log level (1:fatal 2:error,3:warn,4:info,5:debug)
+Level = 5
+# log format（support format：text/json）
+Format = "text"
+# log output(support：stdout/stderr/file)
+Output = "stdout"
+# log output file path
+OutputFile = "data/microshop.log"
+# enable log hook
+EnableHook = false
+# log hook level
+HookLevels = ["info","warn","error"]
+# log hook (support：gorm/mongo)
+Hook = "gorm"
+# hook max threads
+HookMaxThread = 1
+# hook max buffer
+HookMaxBuffer = 512
+
+[LogGormHook]
+# db type(support：mysql/sqlite3/postgres)
+DBType = "sqlite3"
+# max life time(s)
+MaxLifetime = 7200
+# max open connections
+MaxOpenConns = 1
+# max idle connections
+MaxIdleConns = 1
+# table name
+Table = "logger"
+
+[LogMongoHook]
+# collection name
+Collection = "logger"
+
+# Service monitor(GOPS:https://github.com/google/gops)
+[Monitor]
+# Enable
+Enable = false
+# HTTP address
+Addr = "192.168.1.118:16060"
+# config directory(use default if blank)
+ConfigDir = ""
+
+# Redis
+[Redis]
+# address
+Addr = "192.168.1.118:6379"
+# password
+Password = ""
+
+# Rate limiter(use memory if not redis)
+[RateLimiter]
+# enable
+Enable = false
+# max rps
+Count = 300
+# redis db(redis db if use redis)
+RedisDB = 10
+
+[CORS]
+# enable
+Enable = true
+# allow origins(* is ALL)
+AllowOrigins = ["https://localhost:4200", "https://192.168.1.118:4200", "http://localhost:4200","http://192.168.1.118:4200","http://192.168.1.118:8000"]
+# methods allowed origins
+AllowMethods = ["GET","POST","PUT","DELETE","PATCH"]
+# allowed headers
+AllowHeaders = ["Content-Type", "authorization"]
+# if request includes cookie, http authentication or ssl cert
+AllowCredentials = true
+# max cache age of requests(s)
+MaxAge = 7200
+
+[Gorm]
+# Enable debug
+Debug = true
+# satabase type(Currently support：mysql/sqlite3/postgres)
+DBType = "postgres"
+# connection max life time(s秒)
+MaxLifetime = 7200
+# max open connections
+MaxOpenConns = 150
+# max idle connections in connection pool
+MaxIdleConns = 50
+# table schema
+Schema = ""
+# enable auto migration
+EnableAutoMigrate = true
+
+[MySQL]
+# Host
+Host = "192.168.1.118"
+# Port
+Port= 3306
+# User
+User = "root"
+# Password
+Password = "123456"
+# Database name
+DBName = "microshop"
+# other parameters
+Parameters = "charset=utf8mb4&parseTime=True&loc=Local&allowNativePasswords=true"
+
+[Postgres]
+# Host
+Host = "192.168.1.118"
+# Port
+Port= 5432
+# User
+User = "postgres"
+# Password
+Password = "password"
+# Database name
+DBName = "microshop"
+# SSL mode
+SSLMode = "disable"
+# other parameters
+Parameters = ""
+
+[Sqlite3]
+# Database file path
+Path = "data/testdb.db"
+
+# mongo version >=4.0
+# replication set mode start
+# replication:
+#   replSetName: rs0
+# rs.initiate()
+# rs.status()
+# StorageEngine choose wiredTiger
+[Mongo]
+# URI(mongodb://user:password@192.168.1.118:27017/?authSource=admin)
+URI = "mongodb://192.168.1.118:27017/?appName=microshop"
+# Database name
+Database = "microshop"
+# Connection timeout (s)
+Timeout = 30
+# collection prefix
+CollectionPrefix = "m_"
+
+[UniqueID]
+# Unique ID type(support：uuid/object/snowflake)
+Type = "snowflake"
+
+# https://github.com/twitter-archive/snowflake
+[UniqueID.Snowflake]
+# Node ID (0-1023)
+Node = 1
+# Start timestamp(2021 11:13:17 PM GMT-08:00)
+Epoch = 1611990797000

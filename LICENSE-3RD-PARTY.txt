@@ -1,0 +1,19 @@
+BSD 3-Clause License (https://opensource.org/licenses/BSD-3-Clause)
+applies to: 
+- gRPC Gateway, Copyright (c) 2015, Gengo, Inc. https://github.com/grpc-ecosystem/grpc-gateway/blob/master/LICENSE.txt
+
+BSD-2-Clause License (https://opensource.org/licenses/BSD-2-Clause)
+applies to: 
+- Inject custom tags to protobuf golang struct, Copyright (c) 2016, Diep Pham. https://github.com/favadi/protoc-go-inject-tag/blob/master/LICENSE
+
+Apache License 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+applies to: 
+- GRPC, https://github.com/grpc/grpc-go/blob/master/LICENSE
+- Wire, https://github.com/google/wire/blob/master/LICENSE
+
+The MIT License (MIT) (https://opensource.org/licenses/MIT)
+applies to: 
+- Gorm, Copyright (c) 2013-NOW  Jinzhu <wosmvp@gmail.com>, https://github.com/go-gorm/gorm/blob/master/License
+- Scaffolding, Config, CLI, Copyright (c) 2020 Lyric, https://github.com/LyricTian/gin-admin/blob/master/LICENSE
+- Queue, Copyright (c) 2017 Lyric, https://github.com/LyricTian/queue/blob/master/LICENSE
+- Project Layout, Hacker license!, https://github.com/golang-standards/project-layout/blob/master/LICENSE.md
